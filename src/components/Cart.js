@@ -10,7 +10,7 @@ const Cart = ({ isOpen, onClose }) => {
         <div className={`cart-container ${isOpen ? "open" : ""}`}>
             <div className="cart-content">
                 <button className="close-btn" onClick={onClose}>✖</button>
-                <h2 className="text">Your Cart</h2>
+                <h2 className="text">your cart</h2>
                 {cart.length === 0 ? (
                     <p className="empty-cart">Your cart is empty</p>
                 ) : (

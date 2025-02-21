@@ -6,6 +6,10 @@ export const ProductProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const addProduct = (newProduct) => {
+        setProducts((prevProducts) => [...prevProducts, newProduct]);
+    };
+
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -27,7 +31,7 @@ export const ProductProvider = ({ children }) => {
     }, []);
 
     return (
-        <ProductContext.Provider value={{ products, loading }}>
+        <ProductContext.Provider value={{ products, loading, addProduct }}>
             {children}
         </ProductContext.Provider>
     );
